@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Search from '../components/Search';
@@ -13,7 +13,7 @@ import '../assets/styles/App.scss';
 
 const API = 'http://localhost:3000/initalState';
 
-const App = () => {
+const Home = () => {
 
   // const [videos, setVideos] = useState([]);
 
@@ -70,4 +70,4 @@ CarouselItem.propTypes = {
   duration: PropTypes.number,
 };
 
-export default App;
+export default Home;

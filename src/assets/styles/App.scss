@@ -17,3 +17,47 @@ body {
 // }
 
 // https://codepen.io/pieter-biesemans/pen/zoOvMY/
+
+.input,
+input.input:-webkit-autofill,
+input.input:-webkit-autofill:hover,
+input.input:-webkit-autofill:focus,
+input.input:-webkit-autofill:active {
+    background-color: transparent !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    height: 50px;
+    -webkit-text-fill-color: white !important;
+    background-image: none;
+}
+
+input.input:-internal-autofill-selected {
+    background-color: #21C088;
+    -webkit-box-shadow: 0 0 0 30px rgba(143, 87, 253, 0.6) inset !important;
+}
+
+.input::placeholder {
+    color: white;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 40px;
+    border: none;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}

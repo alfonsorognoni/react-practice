@@ -23,7 +23,7 @@ const Header = () => (
           <a href='/'>Cuenta</a>
         </li>
         <li>
-          <a href='/'>Cerrar Sesión</a>
+          <Link to='/login'>Cerrar Sesión</Link>
         </li>
       </ul>
     </div>

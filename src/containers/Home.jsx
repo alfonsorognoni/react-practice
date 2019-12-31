@@ -1,17 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 
-import useInitialState from '../hooks/useInitialState';
+// import useInitialState from '../hooks/useInitialState';
 
 import '../assets/styles/App.scss';
 
-const API = 'http://localhost:3000/initalState';
+// const API = 'http://localhost:3000/initalState';
 
-const Home = () => {
+const Home = ({ myList, trends, originals }) => {
 
   // const [videos, setVideos] = useState([]);
 
@@ -21,15 +22,15 @@ const Home = () => {
   //     .then(data => setVideos(data));
   // }, []);
 
-  const InitialState = useInitialState(API);
+  // const InitialState = useInitialState(API);
 
   return (
     <>
       <Search />
-      {InitialState.mylist && InitialState.mylist.length > 0 && (
+      {myList && myList.length > 0 && (
         <Categories title='Mi Lista'>
           <Carousel>
-            {InitialState.mylist && InitialState.mylist.map((item) => (
+            {myList && myList.map((item) => (
               // eslint-disable-next-line react/jsx-props-no-spreading
               <CarouselItem key={item.id} {...item} />
             ))}
@@ -39,7 +40,7 @@ const Home = () => {
 
       <Categories title='Tendencias'>
         <Carousel>
-          {InitialState.trends && InitialState.trends.map((item) => (
+          {trends && trends.map((item) => (
             // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />
           ))}
@@ -48,7 +49,7 @@ const Home = () => {
 
       <Categories title='Originales'>
         <Carousel>
-          {InitialState.originals && InitialState.originals.map((item) => (
+          {originals && originals.map((item) => (
             // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />
           ))}
@@ -66,4 +67,12 @@ CarouselItem.propTypes = {
   duration: PropTypes.number,
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    myList: state.myList,
+    trends: state.trends,
+    originals: state.originals,
+  };
+};
+// export default Home;
+export default connect(mapStateToProps, null)(Home);

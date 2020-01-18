@@ -14,7 +14,7 @@ const Header = (props) => {
 
   const handleLogout = (event) => {
     props.logoutRequest({});
-  }
+  };
 
   return (
     <header className='header'>
@@ -34,26 +34,28 @@ const Header = (props) => {
           <p>Perfil</p>
         </div>
         <ul>
-          {hasUser ?
+          {hasUser ? (
             <li>
               <a href='/'>{user.name}</a>
             </li>
-            : null
+          ) :
+            null
           }
 
-          {hasUser ?
+          {hasUser ? (
             <li>
-              <a href="#logout" onClick={handleLogout}>Cerrar Sesión</a>
+              <a href='#logout' onClick={handleLogout}>Cerrar Sesión</a>
             </li>
-            :
-            <li>
-              <Link to='/login'>Iniciar Sesión</Link>
-            </li>
-          }
+          ) :
+            (
+              <li>
+                <Link to='/login'>Iniciar Sesión</Link>
+              </li>
+            )}
         </ul>
       </div>
     </header>
-  )
+  );
 };
 
 Header.propTypes = {
@@ -68,7 +70,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   logoutRequest,
-}
+};
 
 // export default Header;
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

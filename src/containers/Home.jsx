@@ -26,7 +26,7 @@ const Home = ({ myList, trends, originals }) => {
 
   return (
     <>
-      <Search />
+      <Search isHome />
       {myList && myList.length > 0 && (
         <Categories title='Mi Lista'>
           <Carousel>
@@ -70,7 +70,7 @@ CarouselItem.propTypes = {
 const mapStateToProps = (state) => {
   return {
     myList: state.myList,
-    trends: state.trends,
+    trends: state.trendsFiltered || state.trends,
     originals: state.originals,
   };
 };

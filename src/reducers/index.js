@@ -16,17 +16,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.payload,
-      }
+      };
     case 'LOGOUT_REQUEST':
       return {
         ...state,
         user: action.payload,
-      }
+      };
     case 'REGISTER_REQUEST':
       return {
         ...state,
         user: action.payload,
-      }
+      };
     default:
       return state;
   }

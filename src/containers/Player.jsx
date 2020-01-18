@@ -1,19 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import '../assets/styles/components/Player.scss';
 
 const Player = (props) => {
-    const { id } = props.match.params;
+  const { id } = props.match.params;
 
-    return (
-        <div className="Player">
-            <video src="" controls autoPlay>
-                <source src="" type="video/mp4" />
-            </video>
-            <div className="Player-back">
-                <button type="button" onClick={() => props.history.goBack()}>Regresar</button>
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className='Player'>
+      <video src='' controls autoPlay>
+        <source src='' type='video/mp4' />
+      </video>
+      <div className='Player-back'>
+        <button type='button' onClick={() => props.history.goBack()}>Regresar</button>
+      </div>
+    </div>
+  );
+};
 
 export default Player;
